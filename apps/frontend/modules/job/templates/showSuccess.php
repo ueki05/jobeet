@@ -1,3 +1,7 @@
+<?php
+  slot('title', sprintf('%s is looking for a %s', $jobeet_job->getCompany(), $jobeet_job->getPosition()))
+?>
+
 <?php use_stylesheet('job.css') ?>
 <?php use_helper('Text') ?>
 
