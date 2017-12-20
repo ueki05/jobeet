@@ -7,15 +7,15 @@
  */
 class JobeetCategoryTable extends Doctrine_Table
 {
-    /**
-     * Returns an instance of this class.
-     *
-     * @return object JobeetCategoryTable
-     */
-    public static function getInstance()
-    {
-        return Doctrine_Core::getTable('JobeetCategory');
-    }
+  /**
+   * Returns an instance of this class.
+   *
+   * @return object JobeetCategoryTable
+   */
+  public static function getInstance()
+  {
+    return Doctrine_Core::getTable('JobeetCategory');
+  }
   // ↑ インデントは別コミットで修正
 
   public function getWithJobs()
