@@ -15,4 +15,4 @@ web/uploads
 web/pdf_files
 web/knp_sn*
 data/sql/*.sql
-lib/vendor/symfony/symfony-1.4.20/*
+lib/vendor/symfony/*

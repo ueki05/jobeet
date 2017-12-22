@@ -7,13 +7,23 @@
  */
 class JobeetCategoryTable extends Doctrine_Table
 {
-    /**
-     * Returns an instance of this class.
-     *
-     * @return object JobeetCategoryTable
-     */
-    public static function getInstance()
-    {
-        return Doctrine_Core::getTable('JobeetCategory');
-    }
+  /**
+   * Returns an instance of this class.
+   *
+   * @return object JobeetCategoryTable
+   */
+  public static function getInstance()
+  {
+    return Doctrine_Core::getTable('JobeetCategory');
+  }
+  // ↑ インデントは別コミットで修正
+
+  public function getWithJobs()
+  {
+    $q = $this->createQuery('c')
+      ->leftJoin('c.JobeetJobs j')
+      ->where('j.expires_at > ?', date('Y-m-d H:i:s', time()));
+
+    return $q->execute();
+  }
 }
