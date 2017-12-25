@@ -54,7 +54,7 @@ abstract class BaseJobeetCategory extends sfDoctrineRecord
 
         $timestampable0 = new Doctrine_Template_Timestampable();
         $sluggable0 = new Doctrine_Template_Sluggable(array(
-             'fields' =>
+             'fields' => 
              array(
               0 => 'name',
              ),
