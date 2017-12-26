@@ -16,8 +16,7 @@
   <?php if ($jobeet_job->getLogo()): ?>
     <div class="logo">
       <a href="<?php echo $jobeet_job->getUrl() ?>">
-        <img src="/uploads/jobs/<?php echo $jobeet_job->getLogo() ?>"
-          alt="<?php echo $jobeet_job->getCompany() ?> logo" />
+        <img src="/uploads/jobs/<?php echo $job->getLogo() ?>" alt="<?php echo $job->getCompany() ?> logo" />
       </a>
     </div>
   <?php endif ?>
