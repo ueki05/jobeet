@@ -17,7 +17,7 @@ class jobActions extends sfActions
 
   public function executeShow(sfWebRequest $request)
   {
-    $this->jobeet_job = $this->getRoute()->getObject();
+    $this->job = $this->getRoute()->getObject();
   }
 
   public function executeNew(sfWebRequest $request)
