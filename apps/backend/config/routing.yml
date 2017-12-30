@@ -3,7 +3,7 @@ jobeet_category:
   options:
     model:                JobeetCategory
     module:               jobeet_category
-    prefix_path:          /jobeet_category
+    prefix_path:          /category
     column:               id
     with_wildcard_routes: true
 
