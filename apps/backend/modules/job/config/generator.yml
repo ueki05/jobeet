@@ -12,14 +12,30 @@ generator:
     actions_base_class:    sfActions
 
     config:
-      actions: ~
+      actions:
+        deleteNeverActivated: { label: Delete never activated jobs }
       fields:
         is_activated: { label: Activated?, help: Whether the user has activated the job, or not }
         is_public:    { label: Public?, help: Whether the job can also be published on affiliate websites, or not }
       list:
         title: Job Management
+        layout:  stacked
         fields:
           is_public:    { label: "Public? (label for the list)" }
+        display: [company, position, location, url, is_activated, email]
+        params: |
+          %%is_activated%% <small>%%jobeet_category%%</small> - %%company%%
+          (<em>%%email%%</em>) is looking for a %%=position%% (%%location%%)
+        sort: [expires_at, desc]
+        max_per_page: 10
+        batch_actions:
+          _delete:    ~
+          extend:     ~
+        object_actions:
+          extend:   ~
+          _edit:    ~
+          _delete:  ~
+        table_method: retrieveBackendJobList
       filter:  ~
       form:    ~
       edit:
