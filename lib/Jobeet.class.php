@@ -4,11 +4,6 @@ class Jobeet
 {
   static public function slugify($text)
   {
-    if (empty($text))
-    {
-      return 'n-a';
-    }
-
     // 文字ではないもしくは数値ではないものすべてを - に置き換える
     $text = preg_replace('/\W+/', '-', $text);
 
