@@ -19,4 +19,13 @@ class JobeetTestFunctional extends sfTestFunctional
 
     return $this;
   }
+
+  public function getExpiredJob()
+  {
+    $q = Doctrine_Query::create()
+      ->from('JobeetJob j')
+      ->where('j.expires_at < ?', date('Y-m-d', time()));
+
+    return $q->fetchOne();
+  }
 }
