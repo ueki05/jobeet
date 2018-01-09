@@ -37,6 +37,9 @@ class jobActions extends sfActions
 
   public function executeEdit(sfWebRequest $request)
   {
+    $job = $this->getRoute()->getObject();
+    $this->forward404If($job->getIsActivated());
+
     $this->form = new JobeetJobForm($this->getRoute()->getObject());
   }
 
