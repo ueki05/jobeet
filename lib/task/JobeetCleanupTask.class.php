@@ -1,3 +1,4 @@
+<?php
 class JobeetCleanupTask extends sfBaseTask
 {
   protected function configure()
