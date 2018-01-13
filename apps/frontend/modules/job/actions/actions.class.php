@@ -94,8 +94,8 @@ class jobActions extends sfActions
     $job = $this->getRoute()->getObject();
     $this->forward404Unless($job->extend());
 
-    $this->getUser()->setFlash('notice', sprintf('Your job validity has been extended until %s.', $job->getDateTimeObject('expires_at')->format('m/d/Y')));
+    $this->getUser()->setFlash('notice', sprintf('Your job validity has been extended until %s.', date('m/d/Y', strtotime($job->getExpiresAt()))));
 
-    $this->redirect('job_show_user', $job);
+    $this->redirect($this->generateUrl('job_show_user', $job));
   }
 }
